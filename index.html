@@ -218,7 +218,12 @@ $content =     file_get_contents("https://api.ether1.org/api.php?api=network_sta
 $result  = json_decode($content);
 
 
-print_r( $result->block_height - 2000000 );
+$var1 = ( $result->block_height ); 
+$var2 = ( 2000000 - $var1 );
+$var3 = ( $var2 * 13 );
+$var4 = ( $var3 / 86400 );
+
+echo "<ul><li>$var2 Blocks Until Halving</li><li>$var4 Days Left</li></ul>";
 
 
 ?>
