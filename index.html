@@ -210,16 +210,24 @@
     		<div class="row justify-content-center mb-5 pb-5">
           <div class="col-md-7 text-center heading-section heading-section-white ftco-animate">
             <h2 class="mb-4">ETHO Reward Halving Count down:</h2>
-<!-----HYPE ADD THE CODE HERE--->
-<!-----HYPE ADD THE CODE HERE--->
-<!-----HYPE ADD THE CODE HERE--->
-<!-----HYPE ADD THE CODE HERE--->
-<!-----HYPE ADD THE CODE HERE--->
-<!-----HYPE ADD THE CODE HERE--->
-<!-----HYPE ADD THE CODE HERE--->
-<!-----HYPE ADD THE CODE HERE--->
-<!-----HYPE ADD THE CODE HERE--->
-<!-----HYPE ADD THE CODE HERE--->
+<?php
+
+
+$content =     file_get_contents("https://api.ether1.org/api.php?api=network_stats");
+
+$result  = json_decode($content);
+
+
+$var1 = ( $result->block_height ); 
+$var2 = ( 2000000 - $var1 );
+$var3 = ( $var2 * 13 );
+$var4 = ( $var3 / 86400 );
+$var5 = ( round($var4));
+
+echo "<ul><li>$var2 Blocks Until Halving</li><li>$var5 Days Left</li></ul>";
+
+
+?>
 
           </div>
         </div>
